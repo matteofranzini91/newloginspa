@@ -11,7 +11,8 @@ export type AxiosBaseQueryArgs = {
   config?: AxiosRequestConfig;
 };
 
-export const axiosBaseQuery = (): BaseQueryFn<AxiosBaseQueryArgs, unknown, ApiError> =>
+export const axiosBaseQuery =
+  (): BaseQueryFn<AxiosBaseQueryArgs, unknown, ApiError> =>
   async ({ url, method, data, config }) => {
     try {
       let result: unknown;

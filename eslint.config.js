@@ -1,8 +1,9 @@
 import js from '@eslint/js';
-import globals from 'globals';
 import tsParser from '@typescript-eslint/parser';
-import prettierPlugin from 'eslint-plugin-prettier';
 import prettierConfig from 'eslint-config-prettier';
+import prettierPlugin from 'eslint-plugin-prettier';
+import reactHooksPlugin from 'eslint-plugin-react-hooks';
+import globals from 'globals';
 
 export default [
   // Global ignores
@@ -45,15 +46,18 @@ export default [
     },
     plugins: {
       prettier: prettierPlugin,
+      'react-hooks': reactHooksPlugin,
     },
     rules: {
       ...prettierConfig.rules,
+      ...reactHooksPlugin.configs.recommended.rules,
       'prettier/prettier': 'error',
       semi: [2, 'always'],
       'no-extra-parens': 'off',
       'max-len': 'off',
       'no-multi-spaces': 'error',
       'no-console': 'off',
+      'no-empty': ['error', { allowEmptyCatch: true }],
       indent: 'off',
       // TypeScript handles these:
       'no-undef': 'off',

@@ -1,11 +1,11 @@
 import { act, render, screen } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { MemoryRouter } from 'react-router-dom';
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
-import { store } from '#Store/store';
-import * as httpServiceModule from '#Services/http.service';
 import { useAuth } from '#Hooks/useAuth';
+import * as httpServiceModule from '#Services/http.service';
+import { store } from '#Store/store';
 import AuthProvider from './AuthProvider';
 
 const renderWithProvider = (ui: React.ReactNode, path = '/') =>
@@ -20,7 +20,7 @@ const ConsumerComponent = () => {
   return (
     <div>
       <span data-testid="logged">{String(auth.logged)}</span>
-      <span data-testid="logging">{String(auth.logging)}</span>
+      <span data-testid="logging">{String(auth.isLoggingIn)}</span>
       <span data-testid="userId">{String(auth.userId)}</span>
       <button onClick={() => auth.login('user@test.com', 'pass')}>login</button>
       <button onClick={() => auth.logout()}>logout</button>

@@ -14,9 +14,7 @@ export const useNewPasswordSubmit = (onSuccess: VoidFunction) => {
       await requestPasswordReset(formValues['email']?.value ?? '').unwrap();
       enqueueSnackbar(t('auth.resetPassword.success'), { variant: 'success' });
       onSuccess();
-    } catch {
-
-    }
+    } catch {}
   };
 
   return { handleSubmit, isLoading };

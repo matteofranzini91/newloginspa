@@ -12,22 +12,14 @@ import { useAuth } from '#Hooks/useAuth';
 import { useGetUserByIdQuery } from '#Store/api/user.api';
 
 import NavbarSkeleton from './components/NavbarSkeleton';
-import { MenuItemText, NavbarLogo, StyledNavbar, UserMenuBox } from './Navbar.styles';
 import { useNavbar } from './hooks/useNavbar';
+import { MenuItemText, NavbarLogo, StyledNavbar, UserMenuBox } from './Navbar.styles';
 
 const Navbar = () => {
   const { userId } = useAuth();
   const { data: user, isLoading } = useGetUserByIdQuery(userId as number, { skip: !userId });
-  const {
-    anchorElUser,
-    handleOpenUserMenu,
-    handleCloseUserMenu,
-    handleLogout,
-    handleDeleteUser,
-    settingsTooltip,
-    deleteMenuLabel,
-    logoutMenuLabel,
-  } = useNavbar();
+  const { anchorElUser, handleOpenUserMenu, handleCloseUserMenu, handleLogout, handleDeleteUser, settingsTooltip, deleteMenuLabel, logoutMenuLabel } =
+    useNavbar();
 
   if (isLoading) {
     return <NavbarSkeleton />;
@@ -39,7 +31,7 @@ const Navbar = () => {
         <Toolbar disableGutters>
           <NavbarLogo src={logo} alt="Logo" />
           <UserMenuBox>
-            <LanguageSelector />
+            <LanguageSelector colorScheme="dark" />
             <Tooltip title={settingsTooltip}>
               <IconButton onClick={handleOpenUserMenu}>
                 <Avatar alt={user?.name ?? ''} src={user?.avatar ?? ''} />
@@ -53,6 +45,7 @@ const Navbar = () => {
               transformOrigin={{ vertical: 'top', horizontal: 'right' }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
+              disableScrollLock
               slotProps={{ paper: { sx: { mt: '45px' } } }}
             >
               <MenuItem onClick={handleDeleteUser}>

@@ -9,7 +9,8 @@ import ProtectedRoute from './ProtectedRoute';
 const mockUseAuth = (logged: boolean) =>
   vi.spyOn(useAuthModule, 'useAuth').mockReturnValue({
     logged,
-    logging: false,
+    isLoggingIn: false,
+    isLoggingOut: false,
     userId: logged ? 1 : null,
     login: vi.fn(),
     logout: vi.fn(),

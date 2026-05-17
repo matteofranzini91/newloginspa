@@ -7,7 +7,7 @@ import { FieldWrapper, FormFieldIcon, StyledTextField } from '../FormBuilder.sty
 
 const FormEmailField = ({ value, label, name, onChange }: FormFieldProps) => (
   <FieldWrapper>
-    <FormFieldIcon>
+    <FormFieldIcon className="form-field-icon">
       <EmailIcon />
     </FormFieldIcon>
     <StyledTextField

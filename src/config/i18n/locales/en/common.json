@@ -29,6 +29,7 @@
     "edit": {
       "success": "User updated successfully",
       "saveButton": "Save changes",
+      "formTitle": "Edit profile",
       "editTooltip": "Edit profile",
       "backTooltip": "Go back"
     },

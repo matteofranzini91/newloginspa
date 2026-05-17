@@ -19,9 +19,7 @@ export const useEditUserSubmit = (onSuccess: VoidFunction) => {
       await editUser({ id: userId, payload: adaptFormValuesToUserInfo(formValues) }).unwrap();
       enqueueSnackbar(t('user.edit.success'), { variant: 'success' });
       onSuccess();
-    } catch {
-
-    }
+    } catch {}
   };
 
   return { handleSubmit, isLoading };

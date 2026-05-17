@@ -18,7 +18,7 @@ const FormPasswordField = ({ value, label, name, onChange }: FormFieldProps) => 
 
   return (
     <FieldWrapper>
-      <FormFieldIcon>
+      <FormFieldIcon className="form-field-icon">
         <LockIcon />
       </FormFieldIcon>
       <StyledTextField

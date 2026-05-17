@@ -18,34 +18,43 @@ export const LoginFormPanel = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'center',
   backgroundColor: theme.palette.primary.main,
-  padding: theme.spacing(6),
+  padding: theme.spacing(5),
   overflow: 'hidden',
   position: 'relative',
   width: '100%',
   [theme.breakpoints.up('sm')]: {
-    padding: theme.spacing(8),
-    width: '70%',
+    padding: theme.spacing(6),
+    width: '75%',
   },
   [theme.breakpoints.up('md')]: {
-    padding: theme.spacing(10),
-    width: '55%',
+    padding: theme.spacing(8),
+    width: '60%',
   },
   [theme.breakpoints.up('lg')]: {
-    padding: '13rem',
-    width: '41.666%',
+    padding: '4rem 6rem',
+    width: '50%',
   },
   [theme.breakpoints.up('xl')]: {
-    padding: '10rem',
-    width: '33.333%',
+    padding: '4rem 8rem',
+    width: '42%',
+  },
+  [theme.breakpoints.up(1440)]: {
+    padding: '5rem 9rem',
+    width: '38%',
   },
   [theme.breakpoints.up(1920)]: {
-    padding: '7rem',
+    padding: '5rem 8rem',
+    width: '30%',
   },
 }));
 
-export const SlidesContainer = styled(Box)(() => ({
+export const SlidesContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
+  minHeight: '420px',
   height: '100%',
+  [theme.breakpoints.up('md')]: {
+    minHeight: '460px',
+  },
 }));
 
 export const SlidePanel = styled(Box)(() => ({

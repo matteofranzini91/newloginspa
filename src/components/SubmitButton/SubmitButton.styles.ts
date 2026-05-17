@@ -2,10 +2,13 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { styled } from '@mui/material/styles';
 
-export const SubmitButtonWrapper = styled(Box)(() => ({
-  margin: '2rem 0',
+export const SubmitButtonWrapper = styled(Box)(({ theme }) => ({
+  margin: '1.25rem 0',
   display: 'flex',
   justifyContent: 'center',
+  [theme.breakpoints.up('xl')]: {
+    margin: '2rem 0',
+  },
 }));
 
 export const StyledSubmitButton = styled(Button)(({ theme }) => ({

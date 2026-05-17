@@ -23,7 +23,6 @@ export const registerUserService = (payload: RegisterUserPayload): Promise<User>
 
 export const getUserByIdService = (userId: number): Promise<User> => httpService.get<User>(`/users/${userId}`);
 
-export const editUserService = (userId: number, payload: Partial<User>): Promise<User> =>
-  httpService.put<User>(`/users/${userId}`, payload);
+export const editUserService = (userId: number, payload: Partial<User>): Promise<User> => httpService.put<User>(`/users/${userId}`, payload);
 
 export const deleteUserService = (userId: number): Promise<void> => httpService.delete<void>(`/users/${userId}`);

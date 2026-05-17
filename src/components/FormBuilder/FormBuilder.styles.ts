@@ -3,14 +3,18 @@ import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
 
 export const FieldWrapper = styled(Box)(({ theme }) => ({
-  marginBottom: theme.spacing(3),
+  marginBottom: theme.spacing(2),
   position: 'relative',
+  [theme.breakpoints.up('xl')]: {
+    marginBottom: theme.spacing(3),
+  },
 }));
 
 export const FormFieldIcon = styled(Box)(() => ({
   position: 'absolute',
   top: '1.2rem',
   left: '-2.5rem',
+  '&.form-field-icon': {},
 }));
 
 export const PasswordIconWrapper = styled(Box)(() => ({

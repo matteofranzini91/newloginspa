@@ -15,9 +15,7 @@ export const useRegisterSubmit = (onSuccess: VoidFunction) => {
       await registerUser(buildRegisterPayload(formValues)).unwrap();
       enqueueSnackbar(t('auth.register.success'), { variant: 'success' });
       onSuccess();
-    } catch {
-
-    }
+    } catch {}
   };
 
   return { handleSubmit, isLoading };

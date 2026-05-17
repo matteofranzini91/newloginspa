@@ -1,6 +1,6 @@
+import { useSnackbar } from 'notistack';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSnackbar } from 'notistack';
 
 import { useAuth } from '#Hooks/useAuth';
 import { useDeleteUserMutation } from '#Store/api/user.api';
@@ -30,8 +30,7 @@ export const useNavbar = () => {
       await deleteUser(auth.userId).unwrap();
       enqueueSnackbar(t('user.delete.success'), { variant: 'success' });
       auth.logout();
-    } catch {
-    }
+    } catch {}
   };
 
   const settingsTooltip = t('user.settings');

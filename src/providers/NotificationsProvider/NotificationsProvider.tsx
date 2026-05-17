@@ -1,6 +1,6 @@
-import { memo } from 'react';
-import type { PropsWithChildren } from 'react';
 import { SnackbarProvider } from 'notistack';
+import type { PropsWithChildren } from 'react';
+import { memo } from 'react';
 
 import HttpErrorBinder from './components/HttpErrorBinder';
 

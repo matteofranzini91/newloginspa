@@ -29,6 +29,7 @@
     "edit": {
       "success": "Usuario editado con éxito",
       "saveButton": "Guardar cambios",
+      "formTitle": "Editar perfil",
       "editTooltip": "Editar datos perfil",
       "backTooltip": "Volver atrás"
     },

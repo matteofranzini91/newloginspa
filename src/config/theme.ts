@@ -38,6 +38,10 @@ export const theme = createTheme({
       main: '#000',
       contrastText: '#fff',
     },
+    common: {
+      white: '#fff',
+      black: '#000',
+    },
     text: {
       primary: '#7e57c2',
     },
@@ -56,9 +60,16 @@ export const theme = createTheme({
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     h2: {
-      fontSize: '2.35rem',
+      fontSize: '1.75rem',
       color: '#681c99',
-      marginBottom: '1rem',
+      marginBottom: '0.75rem',
+      '@media (min-width: 1200px)': {
+        fontSize: '2rem',
+      },
+      '@media (min-width: 1440px)': {
+        fontSize: '2.35rem',
+        marginBottom: '1rem',
+      },
     },
   },
 
@@ -80,6 +91,7 @@ export const theme = createTheme({
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
+          scrollbarGutter: 'stable',
           '@media (max-width: 1360px)': {
             backgroundImage: 'none',
           },
@@ -91,7 +103,7 @@ export const theme = createTheme({
           minHeight: '100%',
         },
         '.MuiAlert-icon path, .MuiAlert-message, .MuiAlert-action path': {
-          color: '#fff',
+          color: '#fff !important',
         },
       },
     },
@@ -107,9 +119,10 @@ export const theme = createTheme({
     MuiAlert: {
       styleOverrides: {
         root: {
-          '& .MuiAlert-icon path': { color: '#fff' },
-          '& .MuiAlert-message': { color: '#fff' },
-          '& .MuiAlert-action path': { color: '#fff' },
+          '& .MuiAlert-icon path': { color: '#fff !important' },
+          '& .MuiAlert-message': { color: '#fff !important' },
+          '& .MuiAlert-action path': { color: '#fff !important' },
+          '& *': { color: '#fff !important' },
         },
       },
     },
