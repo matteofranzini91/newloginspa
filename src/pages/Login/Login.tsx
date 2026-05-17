@@ -40,7 +40,7 @@ const Login = () => {
       <LoginPageGrid container>
         <LoginFormPanel ref={containerRef}>
           <LanguageSelectorWrapper>
-            <LanguageSelector />
+            <LanguageSelector colorScheme="dark" />
           </LanguageSelectorWrapper>
           <SlidesContainer>
             <Slide direction="down" in={loginPanelView.showLoginForm} container={containerNode} mountOnEnter unmountOnExit>
