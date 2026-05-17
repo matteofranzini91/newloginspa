@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Demo",
+      "surname": "User",
+      "birthday": "01/01/1990",
+      "email": "admin@admin.com",
+      "password": "admin",
+      "phone": "600000000",
+      "website": "https://linkedin.com/in/demo",
+      "avatar": "",
+      "company": {
+        "name": "Acme Corp",
+        "position": "Frontend Developer"
+      }
+    }
+  ],
+  "auth_tokens": []
+}

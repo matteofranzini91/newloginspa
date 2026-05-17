@@ -1,0 +1,7 @@
+{
+  "name": "reduxjs/redux-toolkit",
+  "description": "Redux Toolkit - The standard way to write Redux logic",
+  "keywords": ["redux", "state-management", "react", "rtk", "toolkit"],
+  "documentation": "https://redux-toolkit.js.org/",
+  "version": "1.0.0"
+}

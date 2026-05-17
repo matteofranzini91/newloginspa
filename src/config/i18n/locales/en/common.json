@@ -1,0 +1,70 @@
+{
+  "auth": {
+    "login": {
+      "title": "Hello again!",
+      "submitButton": "Login",
+      "forgotPassword": "Forgot password?",
+      "noProfileYet": "Don't have a profile yet?"
+    },
+    "register": {
+      "title": "Register",
+      "submitButton": "Register",
+      "alreadyRegisteredAndForgotten": "Already registered but forgot your password?",
+      "alreadyRegistered": "Already have a profile?",
+      "success": "User registered successfully"
+    },
+    "resetPassword": {
+      "title": "Reset password",
+      "subtitle": "To recover your password, enter your registered email address. If correct, you will receive an email.",
+      "submitButton": "Reset password",
+      "accessButton": "Go to login",
+      "noProfileYet": "Don't have a profile yet?",
+      "success": "Email sent successfully"
+    }
+  },
+  "footer": {
+    "clickHere": "Click here"
+  },
+  "user": {
+    "edit": {
+      "success": "User updated successfully",
+      "saveButton": "Save changes",
+      "editTooltip": "Edit profile",
+      "backTooltip": "Go back"
+    },
+    "delete": {
+      "success": "User deleted successfully",
+      "menuItem": "Delete user"
+    },
+    "logout": {
+      "menuItem": "Logout"
+    },
+    "settings": "Open settings"
+  },
+  "errors": {
+    "invalidPassword": "The entered password is not valid.",
+    "invalidUser": "The entered email is not valid.",
+    "generic": "An unexpected error occurred."
+  },
+  "layout": {
+    "noResolution": "This application is not fully responsive. It can be used from a resolution of 1366px or higher."
+  },
+  "fields": {
+    "email": "Email",
+    "password": "Password",
+    "name": "First name",
+    "surname": "Last name",
+    "birthday": "Date of birth",
+    "company": "Company",
+    "position": "Position",
+    "phone": "Phone",
+    "website": "Website (LinkedIn)",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
+  },
+  "language": {
+    "selector": "Language",
+    "es": "Español",
+    "en": "English"
+  }
+}

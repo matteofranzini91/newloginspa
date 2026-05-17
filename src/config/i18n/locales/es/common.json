@@ -1,0 +1,70 @@
+{
+  "auth": {
+    "login": {
+      "title": "¡Hola de nuevo!",
+      "submitButton": "Acceder",
+      "forgotPassword": "Contraseña olvidada?",
+      "noProfileYet": "¿No tienes un perfil registrado?"
+    },
+    "register": {
+      "title": "Registrarse",
+      "submitButton": "Registrarse",
+      "alreadyRegisteredAndForgotten": "¿Ya tienes un perfil registrado y has olvidado tu contraseña?",
+      "alreadyRegistered": "¿Ya tienes un perfil registrado?",
+      "success": "Usuario registrado con éxito"
+    },
+    "resetPassword": {
+      "title": "Recuperar contraseña",
+      "subtitle": "Para recuperar tu contraseña inserta aquí tu cuenta de correo registrada. Si es correcta recibirás un correo.",
+      "submitButton": "Recuperar contraseña",
+      "accessButton": "Realizar acceso",
+      "noProfileYet": "¿No tienes un perfil registrado?",
+      "success": "Correo enviado con éxito"
+    }
+  },
+  "footer": {
+    "clickHere": "Pincha aquí"
+  },
+  "user": {
+    "edit": {
+      "success": "Usuario editado con éxito",
+      "saveButton": "Guardar cambios",
+      "editTooltip": "Editar datos perfil",
+      "backTooltip": "Volver atrás"
+    },
+    "delete": {
+      "success": "Usuario eliminado con éxito",
+      "menuItem": "Eliminar usuario"
+    },
+    "logout": {
+      "menuItem": "Salir"
+    },
+    "settings": "Abrir ajustes"
+  },
+  "errors": {
+    "invalidPassword": "La contraseña insertada no es válida.",
+    "invalidUser": "El email insertado no es válido.",
+    "generic": "Ha ocurrido un error inesperado."
+  },
+  "layout": {
+    "noResolution": "Esta aplicación no es del todo responsiva. Es posible usarla desde una resolución de 1366px o superior."
+  },
+  "fields": {
+    "email": "Email",
+    "password": "Contraseña",
+    "name": "Nombre",
+    "surname": "Apellidos",
+    "birthday": "Fecha de nacimiento",
+    "company": "Empresa",
+    "position": "Puesto",
+    "phone": "Teléfono",
+    "website": "Sitio web (LinkedIn)",
+    "showPassword": "Mostrar contraseña",
+    "hidePassword": "Ocultar contraseña"
+  },
+  "language": {
+    "selector": "Idioma",
+    "es": "Español",
+    "en": "English"
+  }
+}

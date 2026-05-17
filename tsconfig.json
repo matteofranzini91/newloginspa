@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.paths.json",
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "declaration": false,
+    "strict": true,
+    "sourceMap": true,
+    "jsx": "react-jsx",
+    "noLib": false,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "types": ["vite/client", "@testing-library/jest-dom"]
+  },
+  "compileOnSave": true,
+  "include": ["src/**/*", "config/vite/vitest-setup.ts"],
+  "exclude": ["node_modules", "build", "dist", "coverage"]
+}

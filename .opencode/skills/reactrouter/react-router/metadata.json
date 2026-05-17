@@ -1,0 +1,7 @@
+{
+  "name": "reactrouter/react-router",
+  "description": "React Router - Multi-strategy router for React",
+  "keywords": ["react", "router", "routing", "navigation", "spa"],
+  "documentation": "https://reactrouter.com/",
+  "version": "1.0.0"
+}
