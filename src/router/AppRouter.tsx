@@ -3,8 +3,9 @@ import { Route, Routes } from 'react-router-dom';
 
 import { useAuth } from '#Hooks/useAuth';
 
-import PageLoader from './PageLoader';
+import PageLoader from '../components/PageLoader/PageLoader';
 import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
+import { ROUTES } from './routes';
 
 const Login = lazy(() => import('#Pages/Login/Login'));
 const Welcome = lazy(() => import('#Pages/Welcome/Welcome'));
@@ -19,11 +20,11 @@ const AppRouter = () => {
   return (
     <Suspense fallback={<PageLoader />}>
       <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/refresh-password" element={<Login />} />
-        <Route path="/register-user" element={<Login />} />
+        <Route path={ROUTES.BASE} element={<Login />} />
+        <Route path={ROUTES.REFRESH_PASSWORD} element={<Login />} />
+        <Route path={ROUTES.REGISTER_USER} element={<Login />} />
         <Route
-          path="/welcome"
+          path={ROUTES.WELCOME}
           element={
             <ProtectedRoute>
               <Welcome />

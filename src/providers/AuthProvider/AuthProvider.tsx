@@ -8,18 +8,20 @@ import { api } from '#Store/api/api';
 import { useLoginMutation, useLogoutMutation } from '#Store/api/auth.api';
 import { useAppDispatch } from '#Store/hooks';
 
+import { ROUTES } from 'router/routes';
 import type { AuthContextValue } from './AuthProvider.model';
 import { clearSession, readSession, writeSession } from './AuthProvider.utils';
 
-const AuthContext = createContext<AuthContextValue | null>(null);
+export const AuthContext = createContext<AuthContextValue | null>(null);
 
-const AuthProvider = ({ children }: PropsWithChildren) => {
+const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const session = readSession();
+  const { loggedIn, userId: sessionUserId } = session;
 
-  const [logged, setLogged] = useState<boolean>(session.loggedIn);
-  const [userId, setUserId] = useState<number | null>(session.userId);
+  const [logged, setLogged] = useState<boolean>(loggedIn);
+  const [userId, setUserId] = useState<number | null>(sessionUserId);
   const [isLoggingIn, setIsLoggingIn] = useState<boolean>(false);
   const [isLoggingOut, setIsLoggingOut] = useState<boolean>(false);
 
@@ -33,17 +35,17 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
 
   const login = useCallback(
     async (email: string, password: string) => {
-      // flushSync forces React to paint the PageLoader before the async call
       flushSync(() => setIsLoggingIn(true));
       try {
         const res = await loginMutation({ email, password }).unwrap();
-        writeSession(res.token, res.userId);
-        httpService.setToken(res.token);
-        setUserId(res.userId);
+        const { token, userId: resUserId } = res;
+        writeSession(token, resUserId);
+        httpService.setToken(token);
+        setUserId(resUserId);
         setLogged(true);
-        navigate('/welcome');
+        navigate(ROUTES.WELCOME);
       } catch {
-        // error: stay on login page
+        console.error('Error on login');
       } finally {
         setIsLoggingIn(false);
       }
@@ -52,7 +54,6 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
   );
 
   const logout = useCallback(async () => {
-    // flushSync forces React to paint the PageLoader before the async call
     flushSync(() => setIsLoggingOut(true));
     try {
       await logoutMutation().unwrap();
@@ -62,8 +63,7 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
       setLogged(false);
       setUserId(null);
       dispatch(api.util.resetApiState());
-      navigate('/');
-      // Delay clearing the loader by one frame so the Login route has time to mount
+      navigate(ROUTES.BASE);
       requestAnimationFrame(() => setIsLoggingOut(false));
     }
   }, [logoutMutation, dispatch, navigate]);
@@ -72,4 +72,3 @@ const AuthProvider = ({ children }: PropsWithChildren) => {
 };
 
 export default memo(AuthProvider);
-export { AuthContext };

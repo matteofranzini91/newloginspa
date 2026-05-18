@@ -1,8 +1,4 @@
-export const SESSION_KEYS = {
-  token: 'token',
-  loggedIn: 'loggedIn',
-  userId: 'userId',
-} as const;
+import { SESSION_KEYS } from 'constants/global';
 
 export const readSession = (): { loggedIn: boolean; userId: number | null; token: string | null } => ({
   loggedIn: sessionStorage.getItem(SESSION_KEYS.loggedIn) === 'true',
@@ -16,6 +12,4 @@ export const writeSession = (token: string, userId: number): void => {
   sessionStorage.setItem(SESSION_KEYS.userId, String(userId));
 };
 
-export const clearSession = (): void => {
-  sessionStorage.clear();
-};
+export const clearSession = (): void => sessionStorage.clear();

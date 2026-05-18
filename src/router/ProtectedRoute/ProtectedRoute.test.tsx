@@ -4,6 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 
 import * as useAuthModule from '#Hooks/useAuth';
 
+import { ROUTES } from 'router/routes';
 import ProtectedRoute from './ProtectedRoute';
 
 const mockUseAuth = (logged: boolean) =>
@@ -20,9 +21,9 @@ const renderWithRoutes = (initialPath: string) =>
   render(
     <MemoryRouter initialEntries={[initialPath]}>
       <Routes>
-        <Route path="/" element={<div>Login Page</div>} />
+        <Route path={ROUTES.BASE} element={<div>Login Page</div>} />
         <Route
-          path="/welcome"
+          path={ROUTES.WELCOME}
           element={
             <ProtectedRoute>
               <div>Welcome Page</div>
@@ -36,14 +37,14 @@ const renderWithRoutes = (initialPath: string) =>
 describe('ProtectedRoute', () => {
   it('renders children when user is logged in', () => {
     mockUseAuth(true);
-    renderWithRoutes('/welcome');
+    renderWithRoutes(ROUTES.WELCOME);
     expect(screen.getByText('Welcome Page')).toBeInTheDocument();
     expect(screen.queryByText('Login Page')).not.toBeInTheDocument();
   });
 
   it('redirects to / when user is not logged in', () => {
     mockUseAuth(false);
-    renderWithRoutes('/welcome');
+    renderWithRoutes(ROUTES.WELCOME);
     expect(screen.getByText('Login Page')).toBeInTheDocument();
     expect(screen.queryByText('Welcome Page')).not.toBeInTheDocument();
   });
