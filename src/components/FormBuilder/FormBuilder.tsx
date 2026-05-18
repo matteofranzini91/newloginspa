@@ -33,7 +33,7 @@ const FormBuilder: React.FC<FormBuilderProps> = ({
     }));
   }, []);
 
-  const onFormSubmit = (event: React.FormEvent) => {
+  const onFormSubmit = (event: React.SubmitEvent) => {
     event.preventDefault();
     handleSubmit(formState);
   };

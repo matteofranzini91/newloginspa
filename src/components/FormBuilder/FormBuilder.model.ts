@@ -1,3 +1,4 @@
+import type { I18nKey } from '#Config/i18n/i18n.types';
 import type { Dayjs } from 'dayjs';
 import type { ReactNode } from 'react';
 
@@ -5,7 +6,7 @@ import type { FieldLayout, FormState } from '#Models/form.model';
 
 export type FormBuilderProps = {
   formLayout: FieldLayout[];
-  submitButtonTextKey: string;
+  submitButtonTextKey: I18nKey;
   loadingSubmitButton: boolean;
   handleSubmit: (values: FormState) => void;
   defaultValues?: FormState | null;

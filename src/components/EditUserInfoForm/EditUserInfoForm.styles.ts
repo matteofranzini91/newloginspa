@@ -1,5 +1,4 @@
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 
@@ -57,27 +56,4 @@ export const EditFormTitle = styled(Typography)(({ theme }) => ({
   textAlign: 'center',
   letterSpacing: '0.03em',
   textTransform: 'uppercase',
-}));
-
-export const SaveButtonWrapper = styled(Box)(() => ({
-  marginTop: '1rem',
-  display: 'flex',
-  justifyContent: 'center',
-}));
-
-export const EditFormSaveButton = styled(Button)(({ theme }) => ({
-  backgroundColor: theme.palette.secondary.main,
-  color: theme.palette.common.white,
-  padding: '0.5rem 2rem',
-  borderRadius: '2rem',
-  fontSize: '0.85rem',
-  fontWeight: 600,
-  letterSpacing: '0.04em',
-  '&:hover': {
-    backgroundColor: theme.palette.tertiary.main,
-  },
-  '& .MuiButton-startIcon .MuiSvgIcon-root': {
-    color: theme.palette.common.white,
-    fontSize: '1rem',
-  },
 }));

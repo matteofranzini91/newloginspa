@@ -18,6 +18,9 @@ export const StyledSubmitButton = styled(Button)(({ theme }) => ({
   padding: '0.7rem',
   borderRadius: '2rem',
   margin: 0,
+  '& *': {
+    color: 'inherit',
+  },
   '&:hover': {
     backgroundColor: theme.palette.tertiary.main,
   },
