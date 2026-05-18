@@ -8,6 +8,14 @@ Single Page Application (SPA) built with **React 19**, **TypeScript**, **Vite**,
 
 This is an updated and refactored version of a pre-existing project, modernized with current technologies and best practices. Development was carried out using **opencode** as an AI assistant for code review, optimization, and architectural guidance, alongside manual implementation and testing.
 
+### Demo Credentials
+
+| Email | Password |
+|-------|----------|
+| `admin@admin.com` | `admin` |
+
+To test the application, run `pnpm dev:all` and login with these credentials.
+
 ---
 
 ## Tech Stack
