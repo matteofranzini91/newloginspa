@@ -1,14 +1,9 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Skeleton from '@mui/material/Skeleton';
-import Stack from '@mui/material/Stack';
-import { styled } from '@mui/material/styles';
+import { CenteredStack } from './UserCardSkeleton.styles';
 
-const CenteredStack = styled(Stack)(() => ({
-  alignItems: 'center',
-}));
-
-const UserCardSkeleton = () => (
+export const UserCardSkeleton = () => (
   <Card>
     <CardContent>
       <CenteredStack spacing={1}>
@@ -23,5 +18,3 @@ const UserCardSkeleton = () => (
     </CardContent>
   </Card>
 );
-
-export default UserCardSkeleton;

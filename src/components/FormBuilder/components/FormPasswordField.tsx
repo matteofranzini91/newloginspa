@@ -3,15 +3,14 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import Tooltip from '@mui/material/Tooltip';
 import { memo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 
+import { TranslatedText } from 'components/TranslatedText/TranslatedText';
 import type { FormFieldProps } from '../FormBuilder.model';
 import { FieldWrapper, FormFieldIcon, PasswordIconWrapper, StyledTextField } from '../FormBuilder.styles';
 
 type PasswordType = 'password' | 'text';
 
 const FormPasswordField = ({ value, label, name, onChange }: FormFieldProps) => {
-  const { t } = useTranslation();
   const [passwordType, setPasswordType] = useState<PasswordType>('password');
 
   const toggleVisibility = () => setPasswordType((prev) => (prev === 'password' ? 'text' : 'password'));
@@ -35,11 +34,11 @@ const FormPasswordField = ({ value, label, name, onChange }: FormFieldProps) => 
       />
       <PasswordIconWrapper onClick={toggleVisibility}>
         {passwordType === 'password' ? (
-          <Tooltip title={t('fields.showPassword')}>
+          <Tooltip title={<TranslatedText i18nKey="fields.showPassword" />}>
             <VisibilityIcon />
           </Tooltip>
         ) : (
-          <Tooltip title={t('fields.hidePassword')}>
+          <Tooltip title={<TranslatedText i18nKey="fields.hidePassword" />}>
             <VisibilityOffIcon />
           </Tooltip>
         )}

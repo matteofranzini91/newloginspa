@@ -1,11 +1,11 @@
 import EmailIcon from '@mui/icons-material/Email';
-import { memo } from 'react';
+import React, { memo } from 'react';
 
 import type { FormFieldProps } from '../FormBuilder.model';
 
 import { FieldWrapper, FormFieldIcon, StyledTextField } from '../FormBuilder.styles';
 
-const FormEmailField = ({ value, label, name, onChange }: FormFieldProps) => (
+const FormEmailField: React.FC<FormFieldProps> = ({ value, label, name, onChange }) => (
   <FieldWrapper>
     <FormFieldIcon className="form-field-icon">
       <EmailIcon />

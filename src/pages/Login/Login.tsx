@@ -2,7 +2,7 @@ import Fade from '@mui/material/Fade';
 import Slide from '@mui/material/Slide';
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import LanguageSelector from '#Components/LanguageSelector/LanguageSelector';
+import { LanguageSelector } from '#Components/LanguageSelector/LanguageSelector';
 import LoginForm from '#Components/LoginForm/LoginForm';
 import NewPasswordForm from '#Components/NewPasswordForm/NewPasswordForm';
 import RegisterForm from '#Components/RegisterForm/RegisterForm';

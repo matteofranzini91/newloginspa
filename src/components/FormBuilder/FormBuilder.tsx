@@ -1,54 +1,16 @@
 import Box from '@mui/material/Box';
-import type { ComponentType } from 'react';
-import { memo, useCallback, useMemo, useState } from 'react';
+import React, { memo, useCallback, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import SubmitButton from '#Components/SubmitButton/SubmitButton';
-import type { FieldLayout, FieldType, FormState } from '#Models/form.model';
+import type { FormState } from '#Models/form.model';
 
-import type { DateFieldEvent, FormBuilderProps, FormFieldProps } from './FormBuilder.model';
+import { FIELD_COMPONENT_MAP } from './FormBuilder.config';
+import type { DateFieldEvent, FormBuilderProps } from './FormBuilder.model';
 import { FieldsGroup } from './FormBuilder.styles';
-import FormDateField from './components/FormDateField';
-import FormEmailField from './components/FormEmailField';
-import FormPasswordField from './components/FormPasswordField';
-import FormTextField from './components/FormTextField';
+import { buildInitialState, getGroupFields } from './FormBuilder.utils';
 
-const FIELD_COMPONENT_MAP: Record<FieldType, ComponentType<FormFieldProps>> = {
-  text: FormTextField,
-  email: FormEmailField,
-  password: FormPasswordField,
-  date: FormDateField,
-};
-
-type FieldGroup = { kind: 'single'; field: FieldLayout } | { kind: 'grid'; groupId: string; fields: FieldLayout[] };
-
-const groupFields = (layout: FieldLayout[]): FieldGroup[] => {
-  const groups: FieldGroup[] = [];
-  const gridMap = new Map<string, FieldLayout[]>();
-
-  for (const field of layout) {
-    if (field.gridGroup) {
-      if (!gridMap.has(field.gridGroup)) {
-        const fields: FieldLayout[] = [];
-        gridMap.set(field.gridGroup, fields);
-        groups.push({ kind: 'grid', groupId: field.gridGroup, fields });
-      }
-      gridMap.get(field.gridGroup)!.push(field);
-    } else {
-      groups.push({ kind: 'single', field });
-    }
-  }
-
-  return groups;
-};
-
-const buildInitialState = (layout: FormBuilderProps['formLayout'], defaultValues: FormState | null | undefined): FormState =>
-  layout.reduce<FormState>((acc, field) => {
-    acc[field.name] = defaultValues?.[field.name] ?? { value: '', error: false };
-    return acc;
-  }, {});
-
-const FormBuilder = ({
+const FormBuilder: React.FC<FormBuilderProps> = ({
   formLayout,
   handleSubmit,
   submitButtonTextKey,
@@ -56,14 +18,10 @@ const FormBuilder = ({
   defaultValues = null,
   children = null,
   renderSubmitButton = null,
-}: FormBuilderProps) => {
+}) => {
   const { t } = useTranslation();
 
-  const initialState = useMemo(
-    () => buildInitialState(formLayout, defaultValues),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [],
-  );
+  const initialState = useMemo(() => buildInitialState(formLayout, defaultValues), []);
 
   const [formState, setFormState] = useState<FormState>(initialState);
 
@@ -80,7 +38,7 @@ const FormBuilder = ({
     handleSubmit(formState);
   };
 
-  const fieldGroups = useMemo(() => groupFields(formLayout), [formLayout]);
+  const fieldGroups = useMemo(() => getGroupFields(formLayout), [formLayout]);
 
   return (
     <Box component="form" autoComplete="off" onSubmit={onFormSubmit}>

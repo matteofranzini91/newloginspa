@@ -31,3 +31,5 @@ export type FormDateFieldProps = Omit<FormFieldProps, 'onChange'> & {
   onChange: (e: DateFieldEvent) => void;
   dayjsValue: Dayjs | null;
 };
+
+export type FieldGroup = { kind: 'single'; field: FieldLayout } | { kind: 'grid'; groupId: string; fields: FieldLayout[] };

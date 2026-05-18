@@ -7,7 +7,7 @@ import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 import IconButton from '@mui/material/IconButton';
 import Tooltip from '@mui/material/Tooltip';
 
-import EditUserInfoForm from '#Components/EditUserInfoForm/EditUserInfoForm';
+import { EditUserInfoForm } from '#Components/EditUserInfoForm/EditUserInfoForm';
 
 import type { UserCardProps } from './UserCard.model';
 import {

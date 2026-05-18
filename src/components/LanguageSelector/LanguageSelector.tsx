@@ -7,7 +7,7 @@ import React from 'react';
 import { LanguageSelectorProps } from './LanguageSelector.model';
 import { StyledMenuItem, StyledSelect } from './LanguageSelector.styles';
 
-const LanguageSelector: React.FC<LanguageSelectorProps> = ({ colorScheme = ColorSchemes.light }) => {
+export const LanguageSelector: React.FC<LanguageSelectorProps> = ({ colorScheme = ColorSchemes.light }) => {
   const { language, setLanguage, availableLanguages } = useLanguage();
   const langs = Object.keys(availableLanguages);
 
@@ -31,5 +31,3 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ colorScheme = Color
     </StyledSelect>
   );
 };
-
-export default LanguageSelector;

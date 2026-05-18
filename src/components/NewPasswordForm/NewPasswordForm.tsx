@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
-import CommonButton from '#Components/CommonButton/CommonButton';
+import { CommonButton } from '#Components/CommonButton/CommonButton';
 import FormBuilder from '#Components/FormBuilder/FormBuilder';
-import FormFooter from '#Components/FormFooter/FormFooter';
-import Text from '#Components/Text/Text';
+import { FormFooter } from '#Components/FormFooter/FormFooter';
+import { TranslatedText } from 'components/TranslatedText/TranslatedText';
 
 import type { NewPasswordFormProps } from './NewPasswordForm.model';
 import { newPasswordFormLayout } from './NewPasswordForm.utils';
@@ -14,8 +14,8 @@ const NewPasswordForm = ({ onGoToLoginForm, onGoToRegister }: NewPasswordFormPro
 
   return (
     <>
-      <Text i18nKey="auth.resetPassword.title" variant="h2" component="h2" />
-      <Text i18nKey="auth.resetPassword.subtitle" variant="subtitle2" component="p" />
+      <TranslatedText i18nKey="auth.resetPassword.title" variant="h2" component="h2" />
+      <TranslatedText i18nKey="auth.resetPassword.subtitle" variant="subtitle2" component="p" />
       <FormBuilder
         formLayout={newPasswordFormLayout}
         submitButtonTextKey="auth.resetPassword.submitButton"

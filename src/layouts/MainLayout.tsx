@@ -2,7 +2,7 @@ import Fade from '@mui/material/Fade';
 import type { PropsWithChildren } from 'react';
 import React, { memo } from 'react';
 
-import Navbar from '#Components/Navbar/Navbar';
+import { Navbar } from '#Components/Navbar/Navbar';
 import { useAuth } from '#Hooks/useAuth';
 import { useGetUserByIdQuery } from '#Store/api/user.api';
 import Box from '@mui/material/Box';

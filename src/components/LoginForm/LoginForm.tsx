@@ -1,7 +1,7 @@
-import CommonButton from '#Components/CommonButton/CommonButton';
+import { CommonButton } from '#Components/CommonButton/CommonButton';
 import FormBuilder from '#Components/FormBuilder/FormBuilder';
-import FormFooter from '#Components/FormFooter/FormFooter';
-import Text from '#Components/Text/Text';
+import { FormFooter } from '#Components/FormFooter/FormFooter';
+import { TranslatedText } from 'components/TranslatedText/TranslatedText';
 import { memo } from 'react';
 
 import type { LoginFormProps } from './LoginForm.model';
@@ -13,7 +13,7 @@ const LoginForm = ({ onGoToForgotPassword, onGoToRegister }: LoginFormProps) => 
 
   return (
     <>
-      <Text i18nKey="auth.login.title" variant="h2" component="h2" />
+      <TranslatedText i18nKey="auth.login.title" variant="h2" component="h2" />
       <FormBuilder
         formLayout={loginFormLayout}
         submitButtonTextKey="auth.login.submitButton"

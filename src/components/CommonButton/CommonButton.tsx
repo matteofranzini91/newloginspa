@@ -1,11 +1,9 @@
-import { useTranslation } from 'react-i18next';
-
+import { TranslatedText } from 'components/TranslatedText/TranslatedText';
 import type { CommonButtonProps } from './CommonButton.model';
 import { LinkButton } from './CommonButton.styles';
 
-const CommonButton = ({ i18nKey, onButtonClick }: CommonButtonProps) => {
-  const { t } = useTranslation();
-  return <LinkButton onClick={onButtonClick}>{t(i18nKey)}</LinkButton>;
-};
-
-export default CommonButton;
+export const CommonButton: React.FC<CommonButtonProps> = ({ i18nKey, onButtonClick }) => (
+  <LinkButton onClick={onButtonClick}>
+    <TranslatedText i18nKey={i18nKey} />
+  </LinkButton>
+);

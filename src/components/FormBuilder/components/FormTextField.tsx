@@ -4,7 +4,7 @@ import type { FormFieldProps } from '../FormBuilder.model';
 
 import { FieldWrapper, StyledTextField } from '../FormBuilder.styles';
 
-const FormTextField = ({ value, label, name, onChange }: FormFieldProps) => (
+const FormTextField: React.FC<FormFieldProps> = ({ value, label, name, onChange }) => (
   <FieldWrapper>
     <StyledTextField
       label={label}

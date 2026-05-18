@@ -1,11 +1,11 @@
 import { useTranslation } from 'react-i18next';
 
-import CommonButton from '#Components/CommonButton/CommonButton';
+import { CommonButton } from '#Components/CommonButton/CommonButton';
 
 import type { FormFooterProps } from './FormFooter.model';
 import { FooterText } from './FormFooter.styles';
 
-const FormFooter = ({ textKey, actionButton }: FormFooterProps) => {
+export const FormFooter = ({ textKey, actionButton }: FormFooterProps) => {
   const { t } = useTranslation();
 
   return (
@@ -15,5 +15,3 @@ const FormFooter = ({ textKey, actionButton }: FormFooterProps) => {
     </FooterText>
   );
 };
-
-export default FormFooter;

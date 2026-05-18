@@ -70,6 +70,7 @@ export default [
           destructuredArrayIgnorePattern: '^_',
         },
       ],
+      'react-hooks/exhaustive-deps': 'off',
     },
   },
 ];

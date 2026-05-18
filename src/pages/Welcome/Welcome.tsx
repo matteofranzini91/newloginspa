@@ -1,5 +1,5 @@
 import UserCard from '#Components/UserCard/UserCard';
-import UserCardSkeleton from '#Components/UserCard/components/UserCardSkeleton';
+import { UserCardSkeleton } from '#Components/UserCard/components/UserCardSkeleton';
 import { useAuth } from '#Hooks/useAuth';
 import { useGetUserByIdQuery } from '#Store/api/user.api';
 import Fade from '@mui/material/Fade';

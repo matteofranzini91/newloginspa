@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { useAuth } from '#Hooks/useAuth';
 
-import PageLoader from '../components/PageLoader/PageLoader';
+import { PageLoader } from '../components/PageLoader/PageLoader';
 import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
 import { ROUTES } from './routes';
 

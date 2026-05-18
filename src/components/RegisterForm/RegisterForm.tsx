@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
-import CommonButton from '#Components/CommonButton/CommonButton';
+import { CommonButton } from '#Components/CommonButton/CommonButton';
 import FormBuilder from '#Components/FormBuilder/FormBuilder';
-import FormFooter from '#Components/FormFooter/FormFooter';
-import Text from '#Components/Text/Text';
+import { FormFooter } from '#Components/FormFooter/FormFooter';
+import { TranslatedText } from 'components/TranslatedText/TranslatedText';
 
 import type { RegisterFormProps } from './RegisterForm.model';
 import { registerFormLayout } from './RegisterForm.utils';
@@ -14,7 +14,7 @@ const RegisterForm = ({ onGoToLoginForm, onGoToForgotPassword }: RegisterFormPro
 
   return (
     <>
-      <Text i18nKey="auth.register.title" variant="h2" component="h2" />
+      <TranslatedText i18nKey="auth.register.title" variant="h2" component="h2" />
       <FormBuilder
         formLayout={registerFormLayout}
         submitButtonTextKey="auth.register.submitButton"

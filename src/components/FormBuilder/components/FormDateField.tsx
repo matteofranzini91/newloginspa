@@ -1,11 +1,11 @@
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import dayjs, { type Dayjs } from 'dayjs';
-import { memo, useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 
 import type { DateFieldEvent, FormFieldProps } from '../FormBuilder.model';
 import { FieldWrapper } from '../FormBuilder.styles';
 
-const FormDateField = ({ value, label, name, onChange }: FormFieldProps) => {
+const FormDateField: React.FC<FormFieldProps> = ({ value, label, name, onChange }) => {
   const dayjsValue: Dayjs | null = useMemo(() => (value ? dayjs(value, 'DD/MM/YYYY') : null), [value]);
 
   const handleDateChange = (newValue: Dayjs | null) => {

@@ -7,7 +7,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 
 import logo from '#Assets/images/logo.png';
-import LanguageSelector from '#Components/LanguageSelector/LanguageSelector';
+import { LanguageSelector } from '#Components/LanguageSelector/LanguageSelector';
 import { useAuth } from '#Hooks/useAuth';
 import { useGetUserByIdQuery } from '#Store/api/user.api';
 
@@ -16,7 +16,7 @@ import NavbarSkeleton from './components/NavbarSkeleton';
 import { useNavbar } from './hooks/useNavbar';
 import { MenuItemText, NavbarLogo, StyledNavbar, UserMenuBox } from './Navbar.styles';
 
-const Navbar = () => {
+export const Navbar = () => {
   const { userId } = useAuth();
   const { data: user, isLoading } = useGetUserByIdQuery(userId as number, { skip: !userId });
   const { anchorElUser, handleOpenUserMenu, handleCloseUserMenu, handleLogout, handleDeleteUser, settingsTooltip, deleteMenuLabel, logoutMenuLabel } =
@@ -62,5 +62,3 @@ const Navbar = () => {
     </StyledNavbar>
   );
 };
-
-export default Navbar;
