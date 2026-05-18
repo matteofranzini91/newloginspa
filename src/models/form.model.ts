@@ -6,6 +6,7 @@ export type FieldLayout = {
   type: FieldType;
   label: I18nKey;
   name: string;
+  gridGroup?: string;
 };
 
 export type FieldState = {

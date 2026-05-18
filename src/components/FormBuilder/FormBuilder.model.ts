@@ -10,6 +10,7 @@ export type FormBuilderProps = {
   handleSubmit: (values: FormState) => void;
   defaultValues?: FormState | null;
   children?: ReactNode;
+  renderSubmitButton?: ReactNode;
 };
 
 export type DateFieldEvent = {

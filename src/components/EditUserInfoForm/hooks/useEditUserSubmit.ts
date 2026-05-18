@@ -5,7 +5,7 @@ import { useAuth } from '#Hooks/useAuth';
 import type { FormState } from '#Models/form.model';
 import { useEditUserMutation } from '#Store/api/user.api';
 
-import { adaptFormValuesToUserInfo } from '../EditUserInfoForm.adapters';
+import { adaptFormValuesToUserInfo } from '../EditUserInfoForm.utils';
 
 export const useEditUserSubmit = (onSuccess: VoidFunction) => {
   const { t } = useTranslation();

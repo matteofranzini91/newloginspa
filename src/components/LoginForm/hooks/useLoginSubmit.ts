@@ -8,5 +8,5 @@ export const useLoginSubmit = () => {
     auth.login(formValues['email']?.value ?? '', formValues['password']?.value ?? '');
   };
 
-  return { handleSubmit, isLoading: auth.logging };
+  return { handleSubmit, isLoading: auth.isLoggingIn };
 };

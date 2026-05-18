@@ -10,6 +10,12 @@ export const FieldWrapper = styled(Box)(({ theme }) => ({
   },
 }));
 
+export const FieldsGroup = styled(Box)(() => ({
+  display: 'grid',
+  gridTemplateColumns: '1fr 1fr',
+  columnGap: '1.5rem',
+}));
+
 export const FormFieldIcon = styled(Box)(() => ({
   position: 'absolute',
   top: '1.2rem',

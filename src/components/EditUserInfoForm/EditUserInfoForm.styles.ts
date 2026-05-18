@@ -6,7 +6,6 @@ import { styled } from '@mui/material/styles';
 export const EditFormWrapper = styled(Box)(({ theme }) => ({
   paddingTop: '0.5rem',
 
-  // Override FormBuilder standard fields to look clean inside the card
   '& .MuiInput-underline:before': {
     borderBottomColor: `${theme.palette.tertiary.main}44`,
   },
@@ -26,12 +25,6 @@ export const EditFormWrapper = styled(Box)(({ theme }) => ({
     paddingBottom: '4px',
   },
 
-  // Compact field spacing
-  '& > .MuiBox-root': {
-    marginBottom: theme.spacing(1.25),
-  },
-
-  // Date field overrides
   '& .date-field .MuiOutlinedInput-notchedOutline': {
     borderColor: `${theme.palette.tertiary.main}44`,
   },
@@ -51,7 +44,6 @@ export const EditFormWrapper = styled(Box)(({ theme }) => ({
     padding: '0.6rem 0.875rem',
   },
 
-  // Hide the absolute-positioned icons from FormBuilder (designed for login panel with padding)
   '& .form-field-icon': {
     display: 'none',
   },
@@ -65,12 +57,6 @@ export const EditFormTitle = styled(Typography)(({ theme }) => ({
   textAlign: 'center',
   letterSpacing: '0.03em',
   textTransform: 'uppercase',
-}));
-
-export const FieldsGrid = styled(Box)(() => ({
-  display: 'grid',
-  gridTemplateColumns: '1fr 1fr',
-  columnGap: '1.5rem',
 }));
 
 export const SaveButtonWrapper = styled(Box)(() => ({
