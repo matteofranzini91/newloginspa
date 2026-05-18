@@ -3,10 +3,11 @@ import type { AxiosError, AxiosRequestConfig } from 'axios';
 
 import type { ApiError } from '#Models/errors.model';
 import { httpService } from '#Services/http.service';
+import { HttpVerbs } from 'services/http.config';
 
 export type AxiosBaseQueryArgs = {
   url: string;
-  method: 'get' | 'post' | 'put' | 'patch' | 'delete';
+  method: keyof typeof HttpVerbs;
   data?: unknown;
   config?: AxiosRequestConfig;
 };
@@ -16,13 +17,13 @@ export const axiosBaseQuery =
   async ({ url, method, data, config }) => {
     try {
       let result: unknown;
-      if (method === 'get') {
+      if (method === HttpVerbs.get) {
         result = await httpService.get<unknown>(url, config);
-      } else if (method === 'delete') {
+      } else if (method === HttpVerbs.delete) {
         result = await httpService.delete<unknown>(url, config);
-      } else if (method === 'post') {
+      } else if (method === HttpVerbs.post) {
         result = await httpService.post<unknown>(url, data, config);
-      } else if (method === 'put') {
+      } else if (method === HttpVerbs.put) {
         result = await httpService.put<unknown>(url, data, config);
       } else {
         result = await httpService.patch<unknown>(url, data, config);

@@ -1,6 +1,7 @@
 import axios, { type AxiosError, type AxiosInstance, type AxiosRequestConfig } from 'axios';
 
 import type { ApiError } from '#Models/errors.model';
+import { Endpoints } from './http.config';
 
 type ErrorCallback = (error: ApiError) => void;
 
@@ -72,5 +73,5 @@ class HttpService {
   }
 }
 
-const BASE_URL = import.meta.env.VITE_API_URL ?? '/api';
+const BASE_URL = import.meta.env.VITE_API_URL ?? Endpoints.apiBase;
 export const httpService = new HttpService(BASE_URL);
