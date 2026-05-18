@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import prettierConfig from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
@@ -26,9 +27,7 @@ export default [
   // Base recommended rules
   js.configs.recommended,
 
-  // TypeScript + React files (note: @typescript-eslint plugin is not compatible
-  // with ESLint 10 — this is a pre-existing scaffolding constraint.
-  // Type safety is enforced by TypeScript compiler during build.)
+  // TypeScript + React files
   {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
@@ -47,10 +46,12 @@ export default [
     plugins: {
       prettier: prettierPlugin,
       'react-hooks': reactHooksPlugin,
+      '@typescript-eslint': tsPlugin,
     },
     rules: {
       ...prettierConfig.rules,
       ...reactHooksPlugin.configs.recommended.rules,
+      ...tsPlugin.configs.recommended.rules,
       'prettier/prettier': 'error',
       semi: [2, 'always'],
       'no-extra-parens': 'off',
@@ -59,9 +60,16 @@ export default [
       'no-console': 'off',
       'no-empty': ['error', { allowEmptyCatch: true }],
       indent: 'off',
-      // TypeScript handles these:
       'no-undef': 'off',
-      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+        },
+      ],
     },
   },
 ];
