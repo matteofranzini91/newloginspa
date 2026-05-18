@@ -2,12 +2,12 @@ import type { SelectChangeEvent } from '@mui/material/Select';
 
 import { useLanguage } from '#Hooks/useLanguage';
 import { AVAILABLE_LANGUAGES } from 'constants/global';
-import { SupportedLanguage } from 'models/common.model';
+import { ColorSchemes, SupportedLanguage } from 'models/common.model';
 import React from 'react';
 import { LanguageSelectorProps } from './LanguageSelector.model';
 import { StyledMenuItem, StyledSelect } from './LanguageSelector.styles';
 
-const LanguageSelector: React.FC<LanguageSelectorProps> = ({ colorScheme = 'light' }) => {
+const LanguageSelector: React.FC<LanguageSelectorProps> = ({ colorScheme = ColorSchemes.light }) => {
   const { language, setLanguage, availableLanguages } = useLanguage();
   const langs = Object.keys(availableLanguages);
 

@@ -7,14 +7,10 @@ import LoginForm from '#Components/LoginForm/LoginForm';
 import NewPasswordForm from '#Components/NewPasswordForm/NewPasswordForm';
 import RegisterForm from '#Components/RegisterForm/RegisterForm';
 
+import { ColorSchemes } from 'models/common.model';
+import { INITIAL_VIEW } from './Login.config';
 import type { LoginPanelView } from './Login.model';
 import { LanguageSelectorWrapper, LoginFormPanel, LoginPageGrid, SlidePanel, SlidesContainer } from './Login.styles';
-
-const INITIAL_VIEW: LoginPanelView = {
-  showLoginForm: true,
-  showNewPasswordForm: false,
-  showRegisterForm: false,
-};
 
 const Login = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -40,7 +36,7 @@ const Login = () => {
       <LoginPageGrid container>
         <LoginFormPanel ref={containerRef}>
           <LanguageSelectorWrapper>
-            <LanguageSelector colorScheme="dark" />
+            <LanguageSelector colorScheme={ColorSchemes.dark} />
           </LanguageSelectorWrapper>
           <SlidesContainer>
             <Slide direction="down" in={loginPanelView.showLoginForm} container={containerNode} mountOnEnter unmountOnExit>

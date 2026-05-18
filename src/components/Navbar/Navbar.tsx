@@ -11,6 +11,7 @@ import LanguageSelector from '#Components/LanguageSelector/LanguageSelector';
 import { useAuth } from '#Hooks/useAuth';
 import { useGetUserByIdQuery } from '#Store/api/user.api';
 
+import { ColorSchemes } from 'models/common.model';
 import NavbarSkeleton from './components/NavbarSkeleton';
 import { useNavbar } from './hooks/useNavbar';
 import { MenuItemText, NavbarLogo, StyledNavbar, UserMenuBox } from './Navbar.styles';
@@ -31,7 +32,7 @@ const Navbar = () => {
         <Toolbar disableGutters>
           <NavbarLogo src={logo} alt="Logo" />
           <UserMenuBox>
-            <LanguageSelector colorScheme="dark" />
+            <LanguageSelector colorScheme={ColorSchemes.dark} />
             <Tooltip title={settingsTooltip}>
               <IconButton onClick={handleOpenUserMenu}>
                 <Avatar alt={user?.name ?? ''} src={user?.avatar ?? ''} />
