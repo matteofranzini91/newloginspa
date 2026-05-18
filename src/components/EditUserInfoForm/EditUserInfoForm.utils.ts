@@ -9,12 +9,12 @@ dayjs.extend(customParseFormat);
 export const adaptUserInfoToFormValues = (user: User): FormState => ({
   name: { value: user.name, error: false },
   surname: { value: user.surname, error: false },
-  company: { value: user.company.name, error: false },
-  position: { value: user.company.position, error: false },
+  company: { value: user?.company?.name, error: false },
+  position: { value: user?.company?.position, error: false },
   born: { value: user.birthday, error: false },
   email: { value: user.email, error: false },
   phone: { value: user.phone, error: false },
-  website: { value: user.website, error: false },
+  website: { value: user?.website, error: false },
 });
 
 export const adaptFormValuesToUserInfo = (formValues: FormState): Partial<User> => {

@@ -14,6 +14,14 @@
         "name": "Acme Corp",
         "position": "Frontend Developer"
       }
+    },
+    {
+      "id": 2,
+      "name": "test",
+      "surname": "test",
+      "birthday": "18/05/2026",
+      "email": "test@test.com",
+      "password": "test"
     }
   ],
   "auth_tokens": []

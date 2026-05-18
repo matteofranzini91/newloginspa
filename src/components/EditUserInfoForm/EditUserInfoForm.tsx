@@ -6,7 +6,6 @@ import SubmitButton from '#Components/SubmitButton/SubmitButton';
 import { useAuth } from '#Hooks/useAuth';
 import { useGetUserByIdQuery } from '#Store/api/user.api';
 
-import { TranslatedText } from 'components/TranslatedText/TranslatedText';
 import { editUserInfoFormLayout } from './EditUserInfoForm.config';
 import type { EditUserInfoFormProps } from './EditUserInfoForm.model';
 import { EditFormTitle, EditFormWrapper } from './EditUserInfoForm.styles';
@@ -22,9 +21,7 @@ export const EditUserInfoForm: React.FC<EditUserInfoFormProps> = ({ onClose }) =
 
   return (
     <EditFormWrapper>
-      <EditFormTitle>
-        <TranslatedText i18nKey="user.edit.formTitle" variant="h5" component="h5" />
-      </EditFormTitle>
+      <EditFormTitle i18nKey="user.edit.formTitle" variant="h5" component="h5" />
       <FormBuilder
         formLayout={editUserInfoFormLayout}
         submitButtonTextKey="user.edit.saveButton"

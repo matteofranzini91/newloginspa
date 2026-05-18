@@ -65,7 +65,7 @@ const UserCard = ({ user }: UserCardProps) => {
           <>
             <UserNameBlock>
               <UserName>{`${user.name} ${user.surname}`}</UserName>
-              <UserPosition>{`${user.company.position} · ${user.company.name}`}</UserPosition>
+              <UserPosition>{`${user?.company?.position} · ${user?.company?.name}`}</UserPosition>
             </UserNameBlock>
 
             <StyledDivider />

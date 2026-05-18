@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
+import { TranslatedText } from 'components/TranslatedText/TranslatedText';
 
 export const EditFormWrapper = styled(Box)(({ theme }) => ({
   paddingTop: '0.5rem',
@@ -48,7 +48,7 @@ export const EditFormWrapper = styled(Box)(({ theme }) => ({
   },
 }));
 
-export const EditFormTitle = styled(Typography)(({ theme }) => ({
+export const EditFormTitle = styled(TranslatedText)(({ theme }) => ({
   fontSize: '0.95rem',
   fontWeight: 600,
   color: theme.palette.secondary.main,
